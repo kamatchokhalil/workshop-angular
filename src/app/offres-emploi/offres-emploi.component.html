@@ -1,0 +1,28 @@
+<div>
+  Chercher un emploi par entreprise: <input type="text" [(ngModel)]="txtSearch">
+  <hr>
+  <table>
+    <tr>
+      <th>Référence</th>
+      <th>Titre</th>
+      <th>Entreprise</th>
+      <th>Etat</th>
+    </tr>
+    <tbody *ngFor="let item of listeEmploi">
+    <tr *ngIf="item.entreprise === txtSearch || txtSearch == null">
+      <td>{{item.reference}}</td>
+      <td>{{item.titre}}</td>
+      <td>{{item.entreprise}}</td>
+      <td><button [disabled]="item.etat == false">POSTULER</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<br><br>
+<div>
+  <button (click)="getNbrOffresNC()">Bilan</button>  Nombre des offres
+  d’emploi non clôturées : {{nbrOffNC}}
+</div>
+
+{{txtSearch}}
+

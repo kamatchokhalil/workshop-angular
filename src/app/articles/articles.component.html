@@ -1,0 +1,17 @@
+Nombre d'articles : <input type="number" [(ngModel)]="nbrArticles">
+<br>
+<br>
+<div *ngFor="let item of listeArticles; let i = index">
+<div *ngIf="nbrArticles > i ">
+  <fieldset *ngIf="item.categorie != 'Travail'" [style.background-color]="getEducationBgColor(item)">
+    <legend>{{item.titre}}</legend>
+    Auteur : {{item.auteur}}
+    <br>
+    Date : {{item.date}}
+    <br>
+    Contenu : {{item.contenu}}
+  </fieldset>
+</div>
+
+
+</div>
