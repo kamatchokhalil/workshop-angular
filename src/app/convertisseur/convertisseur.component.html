@@ -1,0 +1,4 @@
+Saisir un montant en dinar :
+<input type="number" [(ngModel)]="txtMontant">
+{{bb}}
+<app-to-euro-convert [montantEnvoye]="txtMontant" (eventSended)="showDataReceived($event)"></app-to-euro-convert>
