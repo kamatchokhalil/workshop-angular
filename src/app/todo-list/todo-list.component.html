@@ -1,0 +1,14 @@
+<div *ngFor="let item of listTodo">
+  <fieldset>
+    <legend style="font-size: 10px; font-family: 'Arial Narrow'">
+      Item of Todo list
+    </legend>
+      Userid : {{item.userId}} <br>
+      Id : {{item.id}}<br>
+      Title : {{item.title}}<br>
+      Completed : {{item.completed}}<br>
+  </fieldset>
+</div>
+<button (click)="getResult()">Bilan</button>
+<h6> Le nombre de todo completed : {{numOfItem}}</h6> <br>
+<h6> Le nombre de todo total : {{listTodo.length}}</h6>

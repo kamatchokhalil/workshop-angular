@@ -1,0 +1,31 @@
+<form #f="ngForm" (submit)="sendData()">
+<fieldset>
+  <legend>Informations générales</legend>
+  Nom <input type="text" name="nom" required="true" ngModel #name="ngModel"> <br>
+  <div *ngIf="name.invalid && name.touched">
+    Champ "Nom" oblégatoire
+  </div>
+  Email <input type="text" name="email" required="true" pattern="[a-zA-Z0-9]+.[a-zA-Z0-9]+@[a-zA-Z]{3}" ngModel #email="ngModel">
+  <div *ngIf="email.invalid && email.touched">
+    <div *ngIf="email.errors.required">Champ "Email" oblégatoire</div>
+    <div *ngIf="email.errors.pattern">Champ "Email"  invalid</div>
+  </div>
+        <fieldset>
+          <legend>Informations de payement</legend>
+          Type de carte <input type="text" name="type" ngModel #type="ngModel" required> <br>
+          <div *ngIf="type.invalid && type.touched">
+            <div *ngIf="type.errors.required">Champ " Type de carte " oblégatoire</div>
+          </div>
+          Numéro carte <input type="text" name="num" ngModel #num="ngModel" maxlength="16" required> <br>
+          <div *ngIf="num.invalid && num.touched">
+            <div *ngIf="num.errors.required">Champ " Numéro carte " oblégatoire</div>
+          </div>
+          Date expiration <input type="text" name="date" ngModel #date="ngModel" required> <br>
+          <div *ngIf="date.invalid && date.touched">
+            <div *ngIf="date.errors.required">Champ " Date expiration " oblégatoire</div>
+          </div>
+          Code <input type="text" name="code" ngModel #code="ngModel" [hidden]="type.invalid || num.invalid || date.invalid">
+        </fieldset>
+  <button type="submit" [disabled]="f.invalid">Ajouter</button>
+</fieldset>
+</form>

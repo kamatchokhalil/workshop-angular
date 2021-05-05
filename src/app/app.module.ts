@@ -9,6 +9,8 @@ import { ConvertisseurComponent } from './convertisseur/convertisseur.component'
 import { ToEuroConvertComponent } from './to-euro-convert/to-euro-convert.component';
 import { ActorsComponent } from './actors/actors.component';
 import { ActorComponent } from './actor/actor.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ActorComponent } from './actor/actor.component';
     ConvertisseurComponent,
     ToEuroConvertComponent,
     ActorsComponent,
-    ActorComponent
+    ActorComponent,
+    TemplateDrivenFormComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
